@@ -14,6 +14,7 @@ $(function () {
     socket.on("online users", (users) => {
         var list = '<p> Online users: </p>'
         users.forEach(function (user) {
+            //display that you are online only for other users(not for you)
             if (user.id === socket.id) return;
             list += '<div title = "send private message" id = `${user.id}`>' + user.username + '</div>';
         });
@@ -22,6 +23,7 @@ $(function () {
     $('#main form').submit(function () {
         if(!$('#message').val()) return;
         socket.emit('submit message', $('#message').val());
+        //append message(to avoid sending it to the user that sent it himself )
         $('#messages').append($('<li>').html('<strong>You: </strong>' + $('#message').val()))
         $('#message').val('');
         return false;
