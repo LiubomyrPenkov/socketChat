@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Socket.IO chat</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <div id="main">
+    <ul id="messages"></ul>
+    <form action="">
+      <input type="text" id="message"><button>Send</button>
+    </form>
+  </div>
+  <div id="auth">
+    <form action="">
+      <fieldset>
+        <legend> Type Your nickname</legend>
+        <input type="text" id="user">
+        <button>Send</button>
+      </fieldset>
+    </form>
+  </div>
+  
+  <div id = "online">online</div>
+  <div id = "info"> !INFO <hr><br>To send private message use this scheme:<br>
+  (name)message.<br>
+  For example:<br> (Mark) Hi, Mark!
+  </div>
+  <div id = "typing"></div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+  <script src="./script.js"></script>
+</body>
+
+</html>
