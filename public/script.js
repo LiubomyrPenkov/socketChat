@@ -16,7 +16,7 @@ $(function () {
         users.forEach(function (user) {
             //display that you are online only for other users(not for you)
             if (user.id === socket.id) return;
-            list += '<div title = "send private message" id = `${user.id}`>' + user.username + '</div>';
+            list += '<p>' + user.username + '</p>';
         });
         $('#online').html(list);
     })
